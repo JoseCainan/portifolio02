@@ -1621,6 +1621,10 @@ header {
 
     /* Menu aberto */
 
+    .easter-egg {
+        display: flex;
+    }
+
     .navegacao.ativo {
         transform: translateX(0);
         visibility: visible;
