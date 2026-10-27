@@ -69,41 +69,43 @@ header {
 
 .navegacao a:hover {
     color: #fff;
-    transform: scale(1.05)
+    transform: scale(1.05);
 }
 
-.botao-contato {
-    border-radius: 10px;
-    border: 1px solid transparent;
-
-    background:
-        linear-gradient(#09090b, #09090b) padding-box,
-        linear-gradient(90deg,
-            #C13CFF,
-            #7A46FF,
-            #00C8FF) border-box;
-
-    width: 170px;
-    height: 40px;
-    padding-left: 5px;
-
+/* Botão de contato dentro da navegação */
+a.botao-contato {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 5px;
-
+    width: 170px;
+    height: 40px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: linear-gradient(#09090b, #09090b) padding-box, 
+                linear-gradient(90deg, #C13CFF, #7A46FF, #00C8FF) border-box;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+    text-decoration: none;
+    white-space: nowrap;
     cursor: pointer;
-
+    transition: box-shadow 0.3s ease;
 }
 
-.botao-contato:hover {
-    box-shadow: 0px 0px 10px 2px #7A46FF;
+a.botao-contato:hover {
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 0 10px 2px #7A46FF;
 }
 
-.botao-contato img {
+a.botao-contato img {
     height: 20px;
     width: auto;
+    flex-shrink: 0;
 }
 
 /* ==========================================
@@ -362,15 +364,18 @@ header {
     gap: 25px;
 }
 
-.botoes button {
+.botoes a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
     height: 40px;
-
     gap: 5px;
 
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
     cursor: pointer;
 
     border-radius: 10px;
@@ -416,7 +421,6 @@ header {
 }
 
 .github {
-
     width: 120px;
 
     border: 1px solid transparent;
@@ -432,6 +436,9 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    font-size: 16px;
+    transition: .25s ease;
 }
 
 .github:hover {
@@ -452,12 +459,15 @@ header {
     align-items: center;
     justify-content: center;
 
+    background: #050713;
+    font-size: 16px;
+
+    transition: .25s ease;
 }
 
 .instagram-botao:hover {
     transform: translateY(-2px);
-
-    box-shadow: 0px 0px 10px 2px #7A46FF;
+    box-shadow: 0 0 10px 2px #7A46FF;
 }
 
 /*--------esquerda fim-------------*/
@@ -673,22 +683,19 @@ header {
     background: transparent !important;
 }
 
-/*-----------------------------------------*/
 /*----------------my projects--------------*/
-
 .my-projects {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: stretch;
+
     margin: 25px;
     padding: 25px;
 
     gap: 15px;
-
     justify-content: space-between;
 
     border-radius: 18px;
-
     border: 1px solid #1B2947;
 
     box-shadow:
@@ -704,21 +711,18 @@ header {
     align-items: center;
 
     gap: 15px;
-
     width: 100%;
 
-    overflow-x: scroll;
-    /*deixa visivel permanentemente a barra de scroll*/
+    overflow-x: auto;
+    overflow-y: hidden;
 
-    padding-bottom: 10px;
+    padding: 20px 0 18px;
+    box-sizing: border-box;
 
     scroll-behavior: smooth;
 
-    scrollbar-width: scroll;
-    /*mostras a scrollbar no edge*/
-
-    -ms-overflow-style: scroll;
-    /*mostras a scrollbar no chrome*/
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
 }
 
 .container-projetos::-webkit-scrollbar {
@@ -1718,14 +1722,15 @@ header {
         max-width: 100%;
     }
 
-    .botoes button {
+    .botoes a {
         max-width: 100%;
         box-sizing: border-box;
+
         font-size: 12px;
         padding: 8px 12px;
     }
 
-    .botoes button img {
+    .botoes a img {
         width: 25px;
         height: 25px;
         object-fit: contain;
